@@ -36,6 +36,7 @@ git commit -m "feat: add my bio"
 git push origin feature/add-my-bio
 
 # 3.资源管理
+```bash
 2026third-igem-team
 public
     favicon.ico
@@ -63,6 +64,7 @@ src
 vite.config.js
 package.json
 README.md
+```
 
 ## 结构说明
 public/.html/
