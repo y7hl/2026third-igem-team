@@ -1,11 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./static/react.svg";
+import viteLogo from "./static/vite.svg";
+import heroImg from "./static/hero.png";
+import TypedText from "./components/Typed";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -16,7 +17,17 @@ function App() {
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
         <div>
-          <h1>Get started</h1>
+          <h1>
+            <TypedText
+              strings={[
+                "ReactJS + Typed.js 打字效果",
+                "Welcome to iGEM Team 2026",
+              ]}
+              typeSpeed={50}
+              loop={false}
+              showCursor={false}
+            />
+          </h1>
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
           </p>
@@ -115,7 +126,7 @@ function App() {
       <div className="ticks"></div>
       <section id="spacer"></section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
