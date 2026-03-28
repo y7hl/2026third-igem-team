@@ -1,0 +1,85 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: #000;
+  color: #fff;
+  z-index: 1000;
+
+  transform: translateY(-100%);
+  animation: slideDown 0.8s ease forwards;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 40px;
+}
+
+.logo {
+  width: 150px; /* 预留logo空间 */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 70px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 28px;
+  position: relative;
+  display: inline-block;
+
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-link:hover {
+  transform: scale(1.15) translateY(-3px);
+}
+
+.nav-link:active {
+  transform: scale(1.05) translateY(0px);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.header.hide {
+  animation: slideUp 0.5s ease forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
