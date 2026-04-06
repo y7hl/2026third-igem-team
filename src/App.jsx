@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from "react";
+import Home from './components/layout/Header'
 import "./App.css";
 
 const HomeContent = lazy(() => import("./components/temp-home/HomeContent"));
@@ -28,7 +29,7 @@ function App() {
 
   return showMain ? (
     <Suspense fallback={null}>
-      <HomeContent />
+      <Home />
     </Suspense>
   ) : null;
 }
