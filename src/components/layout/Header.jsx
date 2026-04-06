@@ -39,7 +39,7 @@ const Header = () => {
     <header className="header" ref={headerRef}>
       <div className="header-container">
 
-        /* logo */
+        {/* logo */}
         <div className="logo">
           <span>iGEM 2026</span>
           {/* 
