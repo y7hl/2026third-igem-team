@@ -4,6 +4,7 @@ import '../../styles/Header.css';
 const Header = () => {
   const baseUrl = import.meta.env.BASE_URL;
   const headerRef = useRef(null);
+  const currentPath = window.location.pathname;
 
   const navItems = [
     { name: 'Home', path: 'home.html' },
@@ -38,7 +39,7 @@ const Header = () => {
     <header className="header" ref={headerRef}>
       <div className="header-container">
 
-        /* logo */
+        {/* logo */}
         <div className="logo">
           <span>iGEM 2026</span>
           {/* 
@@ -49,17 +50,21 @@ const Header = () => {
         {/* ===== 导航 ===== */}
         <nav className="nav">
           <ul className="nav-list">
-            {navItems.map((item) => (
-              <li key={item.name}>
-                <a
-                  href={`${baseUrl}${item.path}`}
-                  className="nav-link"
-                  onClick={(e) => handleClick(e, item.path)}
-                >
-                  {item.name}
-                </a>
-              </li>
-            ))}
+             {navItems.map((item) => {
+              const isActive = currentPath.includes(item.path);
+
+              return (
+                <li key={item.name}>
+                  <a
+                    href={`${baseUrl}${item.path}`}
+                    className={`nav-link ${isActive ? "active" : ""}`}
+                    onClick={(e) => handleClick(e, item.path)}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 

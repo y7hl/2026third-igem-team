@@ -1,4 +1,3 @@
-import { useState } from "react";
 import TypedText from "../ui/Typed";
 import Header from "../layout/Header"
 
@@ -8,7 +7,6 @@ const typedStrings = [
 ];
 
 function HomeContent() {
-  const [count, setCount] = useState(0);
 
   return (
     <>

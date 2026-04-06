@@ -1,7 +1,8 @@
 import { lazy, Suspense, useEffect, useState } from "react";
+import Home from './components/layout/Header'
 import "./App.css";
 
-const HomeContent = lazy(() => import("./components/home/HomeContent"));
+const HomeContent = lazy(() => import("./components/temp-home/HomeContent"));
 
 function App() {
   const [showMain, setShowMain] = useState(
@@ -9,7 +10,7 @@ function App() {
   );
 
   useEffect(() => {
-    import("./components/home/HomeContent");
+    import("./components/temp-home/HomeContent");
   }, []);
 
   useEffect(() => {
@@ -28,7 +29,7 @@ function App() {
 
   return showMain ? (
     <Suspense fallback={null}>
-      <HomeContent />
+      <Home />
     </Suspense>
   ) : null;
 }
